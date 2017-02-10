@@ -1,0 +1,20 @@
+{
+   _id: "numbersMore!",
+   "authorIP": "an ip",
+   "authorName": "Kris",
+   "Poll Title": "Best Number Under Four",
+   "Poll Options": {
+      "Option 1 Values": {
+         "Text": "One",
+         "Votes": 0
+      },
+      "Option 2 Values": {
+         "Text": "Two",
+         "Votes": 0
+      },
+      "Option 3 Values": {
+         "Text": "Three",
+         "Votes": 0
+      }
+   }
+}

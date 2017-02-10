@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html ng-app="pollApp">
+   <head>
+      <link href="/assets/css/style.css" type="text/css" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+      
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+      <script src="/assets/libs/jquery-3.1.1.js" type="text/javascript"></script>
+      <script src="/app/app.js" type="text/javascript"></script>  
+   </head>
+   
+   
+   <body ng-controller="ViewController as view" ng-init="view.updatePolls()">
+      
+      <div id="topBar">  
+            <div class="navDivs" ng-click="view.setView(3)">My Polls</div>
+            <div class="navDivs" ng-click="view.setView(2)">Browse</div>
+            <div class="navDivs" ng-click="view.setView(1)" active="tab.active">Latest</div>
+      </div>
+      
+      <div id="banner">
+         <h1>Custom Polling {{view.currentView}}</h1>
+      </div>
+      
+      <div>
+         <!-- Main page's content -->
+         <welcome ng-show="view.checkView(1)"></welcome>
+
+         <!-- Browsing page's content -->
+         <browse ng-show="view.checkView(2)"></browse>
+
+         <!-- User's stuff page content -->
+         <myStuff ng-show="view.checkView(3)"></myStuff> 
+      
+      </div>
+      
+      
+      
+   </body>
+</html>

@@ -1,0 +1,50 @@
+<!-- Most recent poll is selected and showing and voteable.
+Name and author - the poll with vote/view results (results replace middle) - comments or something?
+
+Few most recent ones underneath? -->
+
+
+<div id="mainContainer">
+   <div class="lowerBoxes">
+      <div id="leftAlign">
+         <p id="pollName">Lorem ipsum dolor sit amet</p>
+         <p id="pollAuthor">poll author</p>
+      </div>  
+   </div>
+   <div class="lowerBoxes">
+      <form>
+         <div>
+            <input type="radio" name="option" value="option 1"><p>test</p>
+         </div>
+         <div>
+            <input type="radio" name="option" value="option 1"><p>test</p>
+         </div>
+         <div>
+            <input type="radio" name="option" value="option 1"><p>test</p>
+         </div>
+
+
+      </form>
+   </div>
+   <div class="lowerBoxes">
+      <p>Comments or something</p>
+   </div>
+   <p>{{view.testVariable}}</p>
+   <p>{{view.polls}}</p>
+<!-- Lower Bits -->
+   <div ng-repeat="poll in view.currentPolls">
+      <div class="fullSpan">
+            <p id="pollName">{{poll["Poll Title"]}}</p> 
+      </div>  
+   </div>
+</div>
+
+<!-- Most recent poll is selected and showing and voteable.
+Name and author - the poll with vote/view results (results replace middle) - comments or something?
+
+Few most recent ones underneath? -->
+
+
+
+         
+         
