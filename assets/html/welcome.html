@@ -4,47 +4,27 @@ Name and author - the poll with vote/view results (results replace middle) - com
 Few most recent ones underneath? -->
 
 
-<div id="mainContainer">
-   <div class="lowerBoxes">
-      <div id="leftAlign">
-         <p id="pollName">Lorem ipsum dolor sit amet</p>
-         <p id="pollAuthor">poll author</p>
-      </div>  
+
+   
+   <!-- click a lower one, newer polls up here
+
+   <div ng-repeat="poll in view.polls|newer than selected somehow></div>
+
+-->
+   
+   
+   
+   <selected-poll></selected-poll>
+   
+   
+
+   <!-- <div id="divider"></div> -->
+   
+   <div id="otherPolls">
+      <div ng-repeat="poll in view.polls|limitTo:5"> <!-- Change 5 to variable the increases with "see more" button click, also make older than selectedPoll -->
+         <div class="fullSpan clickable">
+               <p id="spanPollName" ng-click="view.selectPoll($index)">{{poll["Poll Title"]}}</p> 
+         </div>  
+      </div>
    </div>
-   <div class="lowerBoxes">
-      <form>
-         <div>
-            <input type="radio" name="option" value="option 1"><p>test</p>
-         </div>
-         <div>
-            <input type="radio" name="option" value="option 1"><p>test</p>
-         </div>
-         <div>
-            <input type="radio" name="option" value="option 1"><p>test</p>
-         </div>
 
-
-      </form>
-   </div>
-   <div class="lowerBoxes">
-      <p>Comments or something</p>
-   </div>
-   <p>{{view.testVariable}}</p>
-   <p>{{view.polls}}</p>
-<!-- Lower Bits -->
-   <div ng-repeat="poll in view.currentPolls">
-      <div class="fullSpan">
-            <p id="pollName">{{poll["Poll Title"]}}</p> 
-      </div>  
-   </div>
-</div>
-
-<!-- Most recent poll is selected and showing and voteable.
-Name and author - the poll with vote/view results (results replace middle) - comments or something?
-
-Few most recent ones underneath? -->
-
-
-
-         
-         

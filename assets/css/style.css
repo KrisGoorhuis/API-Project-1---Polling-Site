@@ -5,6 +5,25 @@
 body {
    background-color: rgb(38,38,38);
    margin: 0px;
+   font-family: 'Roboto';
+}
+
+.clickable {
+   background-color: rgb(50, 50, 50);
+   color: white;
+   transition: 0.2s;
+   margin: auto;
+}
+
+.clickable:hover {
+   background-color: rgb(60, 60, 60);
+   transition: 0.2s;
+   cursor: pointer;
+}
+
+.clickable:active{
+   background-color: rgb(70, 70, 70);
+   transition: 0s;
 }
 
 #topBar {
@@ -38,15 +57,25 @@ body {
 
 #banner {
    background-color: rgb(255, 160, 40);
-   width: 1200px;
+   min-width: 1200px;
    height: 150px;
-   line-height: 150px;
+   line-height: 110px;
 }
 
 h1 {
    font-size: 50px;
    text-align: center;
    font-family: 'Roboto';
+   height: 50px;
+}
+
+#createPoll {
+   width: 120px;
+   height: 30px;
+   border-radius: 5px;
+   line-height: 30px;
+   text-align: center;
+   margin-top: 35px;
 }
 
 #mainContainer {
@@ -55,11 +84,11 @@ h1 {
    width: 1200px;
    margin: auto;
    margin-top: 40px;
-   height: 400px;
+   min-height: 300px;
    border-radius: 5px;
 }
 
-.lowerBoxes {
+.boxes {
    display: inline-block;
    vertical-align: top;
    width: calc(100%/3 - 3px);
@@ -71,7 +100,26 @@ h1 {
    text-align: center;
 }
 
-.lowerBoxes p {
+.boxes p {
+   color: white;
+   max-height: 300px;
+   overflow: auto;
+   text-align: center;
+}
+
+#centerBox {
+   display: inline-block;
+   vertical-align: top;
+   width: calc(100%/3 - 3px);
+   margin: 0px;
+   margin-bottom: 10px;
+   background-color: rgb(38, 38, 38);
+   border-radius: 5px;
+   min-height: 50px;
+   text-align: center;
+}
+
+#centerBox {
    color: white;
    max-height: 300px;
    overflow: auto;
@@ -80,7 +128,11 @@ h1 {
 
 #leftAlign {
    display: inline-block;
-   
+   padding: 10px;
+}
+
+#latest {
+   text-align: left;
 }
 
 #pollName {
@@ -93,7 +145,7 @@ h1 {
    text-align: left;
 }
 
-form div {
+#voteForm div {
    padding: 2px;
    padding-left: 10px;
    text-align: left;
@@ -101,11 +153,19 @@ form div {
    border-bottom: 1px solid white;
 }
 
-form div:first-child {
+#voteForm label {
+   font-size: 24px;
+}
+
+#voteForm input[type="radio"] {
+   margin-right: 8px;
+}
+
+#voteForm div:first-child {
    border-radius: 5px 5px 0px 0px;
 }
 
-form div:last-child {
+#voteForm div:last-child {
    border-bottom: 0px solid black;
    border-radius: 0px 0px 5px 5px;
    }
@@ -116,21 +176,84 @@ form p {
    margin-left: 10px;
 }
 
+#controlBox {
+   text-align: center;
+   margin-top: -15px;
+}
+
+.controlBoxButtons {
+   border-radius: 5px;
+   width: 110px;
+   height: 50px;
+   line-height: 50px;
+   vertical-align: middle;
+   display: inline-block;
+   margin: 10px;
+}
+
+#divider {
+   border-bottom: 1px solid rgb(38, 38, 38);
+   margin: auto;
+   margin-top: 40px; /* 25 less than bottom */
+   margin-bottom: 50px;
+   width: 85%;
+   
+}
 
 /* Welcome */
 
 .fullSpan {
-   width: 80%;
+   height: 40px;
+   line-height: 40px;
    border-radius: 5px;
-   background-color: rgb(38, 38, 38);
-   color: white;
+   margin-bottom: 1px;
+}
+
+#spanPollName {
+   font-size: 24px;
+   text-align: center;
 }
 
 
-input[type="radio"] {
+/* createPoll */
+
+input[type="text"] {
   
 }
 
-rgb(255, 172, 59);
-rgb(255, 160, 40);
-rgb(225, 135, 40)
+#createNewPollForm input {
+   border: 0px; 
+   color: white;
+   height: 20px;
+   border-bottom: 1px solid rgb(200, 200, 200);
+}
+
+#createPollTitle {
+   display: block;
+}
+
+#createNewPollForm input {
+   background-color: rgb(38, 38, 38);
+}
+
+.first-input {
+
+}
+
+.last-input {
+   border-bottom: 0px;
+}
+
+#addOptionField {
+   width: 15px;
+   height: 15px;
+   background-color: rgb(38, 38, 38);
+   color: white;
+   text-align: center;
+   line-height: 15px;
+}
+
+#submitPoll {
+   width: 80px;
+   text-align: center;
+}

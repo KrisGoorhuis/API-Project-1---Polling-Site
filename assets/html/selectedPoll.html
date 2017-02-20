@@ -1,0 +1,24 @@
+<div class="boxes">
+      <div id="leftAlign">
+         <p id="pollName">{{view.polls[view.selectedPoll]["Poll Title"]}}</p>
+         <p id="pollAuthor">{{view.polls[view.selectedPoll]["Poll Author"]}}</p>
+      </div>  
+   </div>
+   <div id="centerBox">
+      <form id="voteForm" >
+         <div ng-repeat="option in view.transferPoll(view.selectedPoll)">
+            <label>
+            <input type="radio" name="exclusive" ng-click="view.optionClicked(option['Text'])">{{option["Text"]}}</label>
+         </div>
+      </form>
+   </div>
+   <!-- Make this and the above default to the most recent poll. Will be 0 if we push new polls to the front of an array (.unshift instead of .push). Will need to swap to others: selectedPoll = x, replace position 0 with variable that defaults to 0 and {{}} it. -->
+   <div class="boxes">
+      <p>Results</p>    
+      <p ng-repeat="option in view.transferPoll(view.selectedPoll)">{{option["Votes"]}}</p>
+   </div>
+
+   <div id="controlBox">
+      <div class="controlBoxButtons clickable" id="voteButton" ng-click="view.vote()">Vote</div>
+      <div class="controlBoxButtons clickable" id="viewResultsButton">View Results</div>
+   </div>

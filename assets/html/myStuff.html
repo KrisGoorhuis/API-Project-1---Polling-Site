@@ -1,4 +1,15 @@
-Show user number. If customName = true, add "as [the name they chose]
+<h2>Polls you've created:</h2>
 
-New user name: ( what name would you like your polls to appear under?)// customeName = true;
-reset name to user code button // customName = false;
+<div id="mainContainer">
+   
+<!-- Lower Bits -->
+   <div ng-repeat="poll in view.polls">
+      <div class="fullSpan clickable">
+            <p id="spanPollName">{{view.polls[0]["Poll Title"]}}</p> 
+      </div>  
+   </div>
+</div>
+
+
+<h2>Polls you've voted in:</h2>
+

@@ -15,28 +15,27 @@
    <body ng-controller="ViewController as view" ng-init="view.updatePolls()">
       
       <div id="topBar">  
-            <div class="navDivs" ng-click="view.setView(3)">My Polls</div>
-            <div class="navDivs" ng-click="view.setView(2)">Browse</div>
-            <div class="navDivs" ng-click="view.setView(1)" active="tab.active">Latest</div>
+            <div class="navDivs" ng-click="view.setView(2)">User</div>
+            <div class="navDivs" ng-click="view.setView(1)">Browse</div>
       </div>
       
       <div id="banner">
-         <h1>Custom Polling {{view.currentView}}</h1>
+         <h1>Custom Polling App</h1>
+         <div class="clickable" id="createPoll" ng-click="view.setView(3)">Make one!</div>
       </div>
+          
       
-      <div>
+      <div id="mainContainer">
          <!-- Main page's content -->
-         <welcome ng-show="view.checkView(1)"></welcome>
-
-         <!-- Browsing page's content -->
-         <browse ng-show="view.checkView(2)"></browse>
+         <welcome ng-show="view.checkView(1)"></welcome>         
 
          <!-- User's stuff page content -->
-         <myStuff ng-show="view.checkView(3)"></myStuff> 
-      
+         <my-stuff ng-show="view.checkView(2)"></my-stuff> 
+         
+         <!-- Browsing page's content -->
+         <create-poll ng-show="view.checkView(3)"></create-poll>
+         
       </div>
-      
-      
       
    </body>
 </html>
