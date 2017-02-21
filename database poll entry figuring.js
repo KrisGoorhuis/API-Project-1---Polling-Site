@@ -1,25 +1,25 @@
 {
-   "authorIP": "ip 1",
-   "Poll Title": "Best Number Under Four",
-   "Poll Options": {
-      "Option 1 Values": {
+   "authorIP": "ip 12",
+   "Poll Title": "Best Number Under Four Revised",
+   "Poll Options": [
+      {
          "Text": "One",
          "Votes": 1
       },
-      "Option 2 Values": {
+      {
          "Text": "Two",
          "Votes": 2
       },
-      "Option 3 Values": {
+      {
          "Text": "Three",
          "Votes": 3
       }
-   },
-   "Voter IPs": [{ // ARRAY, man!
+   ],
+   "Voter IPs": [
       100,
       200,
       300
-   }]
+   ]
 },
 
 {

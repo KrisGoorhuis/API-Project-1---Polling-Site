@@ -11,13 +11,13 @@
       this.showingNameField = false;
       this.inputFields = ["1", "2"]; // Start with two poll options!
       var inputCount = 2; // Let us add a new number with each new option.
-      this.optionSelected;
+      this.selectedOption;
       
       this.newPollTitle;
       this.newPollOptions = {
          // This is populated by the ng-model in creatPoll.html. Takes
       }
-      this.selectedPoll = 0; // Governs which poll is shown in big.
+      this.selectedPoll = 3; // Governs which poll is shown in big.
       
       this.setView = function(newView) {       
          this.currentView = newView;
@@ -45,13 +45,14 @@
          console.log(index);
       }
       
-      this.vote = function() {
-         console.log(this.optionSelected);
+      
+      this.optionClicked = function(index) {
+         this.selectedOption = index;
       }
       
-      this.optionClicked = function(name) {
-         console.log(name);
-         this.optionSelected = name;
+      this.vote = function() {
+         console.log(this.selectedOption);
+         this.polls[this.selectedPoll]["Poll Options"][this.selectedOption]["Votes"] ++;
       }
       
       

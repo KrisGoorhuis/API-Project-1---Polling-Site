@@ -8,7 +8,7 @@
       <form id="voteForm" >
          <div ng-repeat="option in view.transferPoll(view.selectedPoll)">
             <label>
-            <input type="radio" name="exclusive" ng-click="view.optionClicked(option['Text'])">{{option["Text"]}}</label>
+            <input type="radio" name="exclusive" ng-click="view.optionClicked($index)">{{option["Text"]}}</label>
          </div>
       </form>
    </div>
