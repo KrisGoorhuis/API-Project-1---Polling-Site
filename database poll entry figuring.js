@@ -1,5 +1,5 @@
 {
-   "authorIP": "ip 12",
+   "Author IP": "ip 12",
    "Poll Title": "Best Number Under Four Revised",
    "Poll Options": [
       {
@@ -23,7 +23,7 @@
 },
 
 {
-   "authorIP": "ip 2",
+   "Author IP": "ip 2",
    "Poll Title": "Best Letter Past C",
    "Poll Options": {
       "Option 1 Values": {
@@ -46,7 +46,7 @@
    }
 },
 {
-   "authorIP": "ip 3",
+   "Author IP": "ip 3",
    "Poll Title": "Best Something Or Other",
    "Poll Options": {
       "Option 1 Values": {

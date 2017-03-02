@@ -12,7 +12,7 @@
    </head>
    
    
-   <body ng-controller="ViewController as view" ng-init="view.updatePolls()">
+   <body ng-controller="ViewController as view" ng-init="view.initialPollGet()">
       
       <div id="topBar">  
             <div class="navDivs" ng-click="view.setView(2)">User</div>
@@ -21,7 +21,7 @@
       
       <div id="banner">
          <h1>Custom Polling App</h1>
-         <div class="clickable" id="createPoll" ng-click="view.setView(3)">Make one!</div>
+         <div class="clickable" id="createPoll" ng-click="view.setView(3)">Make one</div>
       </div>
           
       

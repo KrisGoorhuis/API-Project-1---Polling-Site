@@ -11,17 +11,14 @@ Few most recent ones underneath? -->
    <div ng-repeat="poll in view.polls|newer than selected somehow></div>
 
 -->
-   
-   
-   
+    
    <selected-poll></selected-poll>
-   
    
 
    <!-- <div id="divider"></div> -->
    
    <div id="otherPolls">
-      <div ng-repeat="poll in view.polls|limitTo:5"> <!-- Change 5 to variable the increases with "see more" button click, also make older than selectedPoll -->
+      <div ng-repeat="poll in view.polls|limitTo:5 | orderBy:'$index':true" > <!-- Change 5 to variable the increases with "see more" button click, also make older than selectedPoll -->
          <div class="fullSpan clickable">
                <p id="spanPollName" ng-click="view.selectPoll($index)">{{poll["Poll Title"]}}</p> 
          </div>  
