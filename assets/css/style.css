@@ -88,6 +88,14 @@ h1 {
    border-radius: 5px;
 }
 
+selected-poll {
+   color: green;
+}
+
+.hidden {
+   display: hidden;
+}
+
 .boxes {
    display: inline-block;
    vertical-align: top;

@@ -14,7 +14,6 @@
       newThis.newPollTitle;
       newThis.newPollOptions = {};
       this.selectedPoll; // Governs which poll is shown in big. IS set to most recent during get request.
-      console.log(newThis.polls.length);
       
       this.setView = function(newView) {       
          this.currentView = newView;
@@ -30,10 +29,11 @@
          // Under a $http.get request, "this.polls" refers to a unique instance of  "this.polls". Changing it changes the copy, not the original.
          // For some reason, updating the property ".polls" of a complete copy of "this" somehow updates the two-way binding Angular has with the original "this.polls" for use in the HTML. *shrugs*
          $http.get(getUrl).then(function(data) {
-            newThis.polls = data["data"];
+            newThis.polls = data["data"].reverse(); // Reverse puts most recent additions on top.
             if (callback) {
                callback();
             }
+            console.log(newThis.polls);
          });
       };
       
@@ -48,8 +48,22 @@
          performGet(callback);
       }
       
+      this.isThisPollSelected = function(iteratedPollIndex) {
+         
+         if (iteratedPollIndex === this.selectedPoll) {
+            return true;
+         }
+         
+         
+         if (iteratedPollIndex !== this.selectedPoll) {
+            return false;
+         }
+      }
+      
       this.selectPoll = function(index) {
-         console.log(index);
+         this.selectedPoll = index;
+         console.log(this.polls[this.selectedPoll]);
+         console.log(this.polls);
       }
       
       
@@ -57,13 +71,11 @@
          this.selectedOption = index;
       }
       
-      this.vote = function($scope) { 
+      this.vote = function() { 
          var workingPoll = newThis.polls[newThis.selectedPoll]; // The poll we're voting on.
          $http.get('//freegeoip.net/json/').then(function(data) {
             var geoipObject = JSON.parse(JSON.stringify(data, null, 2));
             var ip = (geoipObject["data"]["ip"]); 
-            console.log(workingPoll["Voter IPs"].indexOf(ip));
-            console.log(ip);
             
             // Is the user's IP on the voters' list? Yes? Just tell them.
             if (workingPoll["Voter IPs"].indexOf(ip) !== -1) {
@@ -88,11 +100,12 @@
                      //console.log(data);
                   })
              } 
-
-            console.log(workingPoll["Author IP"]);
          });
       }
       
+      this.viewResults = function() {
+         
+      }
       
       this.addPollOption = function() {  
          inputCount++;
