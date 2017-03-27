@@ -15,27 +15,25 @@
    <body ng-controller="ViewController as view" ng-init="view.initialPollGet()">
       
       <div id="topBar">  
-            <div class="navDivs" ng-click="view.setView(2)">User</div>
-            <div class="navDivs" ng-click="view.setView(1)">Browse</div>
+            <div class="navDivs" ng-click="view.setView(2)">My Polls</div>
+            <div class="navDivs" ng-click="view.setView(1)">Browse All</div>
       </div>
       
       <div id="banner">
-         <h1>Custom Polling App</h1>
+         <h1>Polling App WIP</h1>
          <div class="clickable" id="createPoll" ng-click="view.setView(3)">Make one</div>
       </div>
           
       
-      <div id="mainContainer">
+
          <!-- Main page's content -->
          <welcome ng-show="view.checkView(1)"></welcome>         
 
          <!-- User's stuff page content -->
-         <my-stuff ng-show="view.checkView(2)"></my-stuff> 
+         <my-polls ng-show="view.checkView(2)"></my-polls> <!-- Something in here is causing the rest of the body to not load. Removing it entirely allows create-poll to appear. -->
          
-         <!-- Browsing page's content -->
+         <!-- Poll creation page content -->
          <create-poll ng-show="view.checkView(3)"></create-poll>
-         
-      </div>
       
    </body>
 </html>

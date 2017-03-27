@@ -1,16 +1,15 @@
-
-
-<form id="createNewPollForm">
-   <div id="createPollTitle">
-      <p>Poll Title</p><br>
-      <input type="text" placeholder="Ex: Best Number Under Four" ng-model="view.newPollTitle">
-   </div>
-   <p>Poll Options</p>
-   <div id="createPollOptions" ng-repeat="field in view.inputFields">
-      <input ng-class="{'first-input':$first, 'last-input':$last}" placeholder="{{field}}" ng-model="view.newPollOptions[field]"><br>
-   </div>
-   <div id="addOptionField" ng-click="view.addPollOption()">+</div>
-   <div id="submitPoll" class="clickable" ng-click="view.submitPoll()">Submit</div>
-</form>
-
+<div id="newPollWrapper">
+   <form id="createNewPollForm">
+      <div id="createPollTitle">
+         <p>Poll Title</p><br>
+         <input type="text" placeholder="Ex: Best Number Under Four" ng-model="view.newPollTitle">
+      </div>
+      <p>Poll Options</p>
+      <div id="createPollOptions" ng-repeat="field in view.inputFields">
+         <input ng-class="{'first-input':$first, 'last-input':$last}" placeholder="{{field}}" ng-model="view.newPollOptions[field]"><br>
+      </div>
+      <div id="addOptionField" ng-click="view.addPollOption()">+</div>
+      <div id="submitPoll" class="clickable" ng-click="view.submitPoll()">Submit</div>
+   </form>
+</div>
 <!-- Push this onto the first array spot so it's at the top of the list. New most recent. -->

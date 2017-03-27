@@ -1,28 +1,16 @@
-<!-- Most recent poll is selected and showing and voteable.
-Name and author - the poll with vote/view results (results replace middle) - comments or something?
-
-Few most recent ones underneath? -->
-
-
-
+<div id="welcomeContainer">
    
-   <!-- click a lower one, newer polls up here
-
-   <div ng-repeat="poll in view.polls|newer than selected somehow></div>
-
--->
-    
-   <selected-poll></selected-poll>
-   
-
-   <!-- <div id="divider"></div> -->
-   
-   <div id="otherPolls">
-      <div ng-repeat="poll in view.polls|limitTo:5" > <!-- Change 5 to variable the increases with "see more" button click, also make older than selectedPoll -->
-         <div class="fullSpan clickable">
-               <selected-poll ng-show="view.isThisPollSelected($index)"></selected-poll>
-               <p id="spanPollName" ng-click="view.selectPoll($index)" ng-hide="view.isThisPollSelected($index)">{{poll["Poll Title"]}}</p> 
+   <div id="pollList">  
+      <div ng-repeat="poll in view.polls|limitTo:view.pollLimit" > <!-- TODO: "see more" button click adds ten to visible list -->
+         <div id="{{$index}}" class="fullSpan clickable">
+               <p class="spanPollName" ng-click="view.selectPoll($index)">{{poll["Poll Title"]}}</p> 
          </div>  
       </div>
+      <div id="showMore" class="clickable" ng-click="view.showMore()">Show More</div>   
    </div>
 
+   <div id="welcomeRight">
+      <selected-poll></selected-poll>
+   </div>
+   
+</div>

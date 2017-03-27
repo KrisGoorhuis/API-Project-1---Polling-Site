@@ -1,0 +1,28 @@
+<h2>Polls you've created:</h2>
+
+<div id="mainContainer">
+   <div id="pollList">  
+      <div ng-repeat="poll in view.polls|limitTo:view.pollLimit | filter:view.userIp">
+         <div id="{{$index}}" class="fullSpan clickable">
+               <p class="spanPollName" ng-click="view.selectPoll($index)">{{poll["Poll Title"]}}</p> 
+         </div>  
+      </div>
+      <div id="showMore" class="clickable" ng-click="view.showMore()">Show More</div>  
+   </div> 
+   
+   
+   <h2>Polls you've voted in:</h2>
+   <div id="pollList">   
+      <div ng-repeat="poll in view.polls|limitTo:10" > 
+         <div id="{{$index}}" class="fullSpan clickable">
+               <p class="spanPollName" ng-click="view.selectPoll($index)">{{poll["Poll Title"]}}</p> 
+         </div>  
+      </div>
+   </div> 
+   
+   
+</div>
+
+
+
+
