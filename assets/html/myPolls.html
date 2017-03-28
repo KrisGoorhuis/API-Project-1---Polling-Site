@@ -2,7 +2,7 @@
 
 <div id="mainContainer">
    <div id="pollList">  
-      <div ng-repeat="poll in view.polls|limitTo:view.pollLimit | filter:view.userIp">
+      <div ng-repeat="poll in view.polls|limitTo:view.pollLimit | filter: {'Author IP':view.userIp}">
          <div id="{{$index}}" class="fullSpan clickable">
                <p class="spanPollName" ng-click="view.selectPoll($index)">{{poll["Poll Title"]}}</p> 
          </div>  

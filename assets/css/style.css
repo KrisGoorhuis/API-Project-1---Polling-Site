@@ -121,6 +121,12 @@ h1 {
    vertical-align: top;
 }
 
+.sticky {
+   position: fixed;
+   top: 0px;
+   width: 200px;
+}
+
 selected-poll {
    display: block;
    color: green;
@@ -240,6 +246,10 @@ form p {
 
 /* Welcome */
 
+#selectedPollWrapper {
+   
+}
+
 .fullSpan {
    min-height: 40px;
    line-height: 25px;
@@ -274,23 +284,25 @@ input[type="text"] {
 }
 
 #newPollWrapper {
-   width: 98%;
-   min-width: 1176px;
+   width: 100%;
+   min-width: 1200px;
    margin: auto;
 }
 
 #createNewPollForm {
-   
+   width: 400px;
+   display: block;
    margin: auto;
    background-color: rgb(255, 160, 40);
    border-radius: 5px;
    padding: 10px;
-   padding-left: 100px;
+   padding-left: 10px;
+   padding-right: 10px;
 }
 
 #createNewPollForm input {
    background-color: rgb(38, 38, 38);
-   min-width: 300px;
+   min-width: 395px;
    height: 25px;
    font-size: 14px;
    padding-left: 5px;
@@ -305,16 +317,24 @@ input[type="text"] {
 }
 
 #addOptionField {
-   width: 15px;
-   height: 15px;
+   width: 18px;
+   height: 18px;
+   line-height: 18px;
+   font-size: 16px;
    background-color: rgb(38, 38, 38);
    color: white;
    text-align: center;
-   line-height: 15px;
+   float: left;
+}
+
+#addOptionField:hover {
+   
 }
 
 #submitPoll {
+   margin: auto;
    margin-top: 10px;
    width: 80px;
    text-align: center;
+   border-radius: 5px;
 }

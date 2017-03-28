@@ -1,14 +1,26 @@
+<div id="topBar">  
+      <!--      <div class="navDivs" ng-click="view.setView(2)">My Polls</div>
+            <div class="navDivs" ng-click="view.setView(1)">Browse All</div> -->
+</div>
+      
+<div id="banner">
+   <h1>Polling App WIP</h1>
+   <div class="clickable" id="createPoll" ng-click="view.setView(1)">Browse all</div>
+</div>
+
 <div id="newPollWrapper">
    <form id="createNewPollForm">
       <div id="createPollTitle">
          <p>Poll Title</p><br>
          <input type="text" placeholder="Ex: Best Number Under Four" ng-model="view.newPollTitle">
       </div>
+      <br>
       <p>Poll Options</p>
       <div id="createPollOptions" ng-repeat="field in view.inputFields">
          <input ng-class="{'first-input':$first, 'last-input':$last}" placeholder="{{field}}" ng-model="view.newPollOptions[field]"><br>
       </div>
-      <div id="addOptionField" ng-click="view.addPollOption()">+</div>
+      <div id="addOptionField" class="clickable" ng-click="view.addPollOption()">+</div>
+      <br>
       <div id="submitPoll" class="clickable" ng-click="view.submitPoll()">Submit</div>
    </form>
 </div>

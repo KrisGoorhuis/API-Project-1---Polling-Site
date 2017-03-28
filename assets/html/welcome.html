@@ -1,3 +1,13 @@
+<div id="topBar">  
+      <!--      <div class="navDivs" ng-click="view.setView(2)">My Polls</div>
+            <div class="navDivs" ng-click="view.setView(1)">Browse All</div> -->
+      </div>
+      
+      <div id="banner">
+         <h1>Polling App WIP</h1>
+         <div class="clickable" id="createPoll" ng-click="view.setView(3)">Make one</div>
+      </div>
+
 <div id="welcomeContainer">
    
    <div id="pollList">  
@@ -6,7 +16,7 @@
                <p class="spanPollName" ng-click="view.selectPoll($index)">{{poll["Poll Title"]}}</p> 
          </div>  
       </div>
-      <div id="showMore" class="clickable" ng-click="view.showMore()">Show More</div>   
+      <div id="showMore" class="clickable" ng-click="view.showMore()" ng-hide="view.areAllPollsShown()">Show More</div>   
    </div>
 
    <div id="welcomeRight">

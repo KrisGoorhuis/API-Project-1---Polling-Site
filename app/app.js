@@ -1,4 +1,16 @@
+$(document).ready(function() {
+   var distance = $('#welcomeRight').offset().top,
+   $window = $(window);
 
+   $window.scroll(function() {
+    if ( $window.scrollTop() >= distance ) {
+        // Your div has reached the top
+       $('#welcomeRight').addClass('sticky');
+    } else {
+       $('#welcomeRight').removeClass('sticky');
+    }
+   });
+});
 
 (function() {
    var app = angular.module('pollApp', ['ngRoute']);
@@ -111,6 +123,12 @@
       
       this.showMore = function() {
          this.pollLimit = this.pollLimit + 5;
+      }
+      
+      this.areAllPollsShown = function() {
+         if (this.polls.length <= this.pollLimit) {
+            return true;
+         }
       }
       
       this.optionClicked = function(index) {
